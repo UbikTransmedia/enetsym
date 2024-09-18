@@ -1,5 +1,3 @@
-# Here's the translation of the file into English while maintaining the markdown format:
-
 # Energy Network Simulation
 
 This project simulates a network of interconnected nodes representing different types of entities within an energy system: suppliers, distributors, and stations. Using the `NetworkX` framework to model graphs and `Tkinter` for the graphical interface, the simulation shows how energy flows between different nodes and statistics related to energy production and consumption.
