@@ -2,6 +2,8 @@
 
 Este proyecto simula una red de nodos interconectados que representan diferentes tipos de entidades dentro de un sistema energético: suministradores, distribuidores y estaciones. Utilizando el framework de `NetworkX` para modelar grafos y `Tkinter` para la interfaz gráfica, la simulación muestra cómo fluye la energía entre los diferentes nodos y las estadísticas relacionadas a la producción y consumo de energía.
 
+![Screenshot of the app](img/sys.png)
+
 ## Funcionalidades
 
 - **Generación de red**: Se genera un grafo tipo Barabási-Albert con 250 nodos, que luego se clasifican en tres tipos:
