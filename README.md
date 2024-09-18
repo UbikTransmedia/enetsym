@@ -1,60 +1,62 @@
-# Simulación de Red de Energía
+# Here's the translation of the file into English while maintaining the markdown format:
 
-Este proyecto simula una red de nodos interconectados que representan diferentes tipos de entidades dentro de un sistema energético: suministradores, distribuidores y estaciones. Utilizando el framework de `NetworkX` para modelar grafos y `Tkinter` para la interfaz gráfica, la simulación muestra cómo fluye la energía entre los diferentes nodos y las estadísticas relacionadas a la producción y consumo de energía.
+# Energy Network Simulation
+
+This project simulates a network of interconnected nodes representing different types of entities within an energy system: suppliers, distributors, and stations. Using the `NetworkX` framework to model graphs and `Tkinter` for the graphical interface, the simulation shows how energy flows between different nodes and statistics related to energy production and consumption.
 
 ![Screenshot of the app](img/sys.png)
 
-## Funcionalidades
+## Features
 
-- **Generación de red**: Se genera un grafo tipo Barabási-Albert con 250 nodos, que luego se clasifican en tres tipos:
-  - **Suministradores**: Generan energía con diferentes fuentes (Solar, Eólica, Geotérmica, etc.).
-  - **Distribuidores**: Intermedian el flujo de energía entre suministradores y estaciones.
-  - **Estaciones**: Consumen o almacenan energía, simulando estaciones de carga.
+- **Network generation**: A Barabási-Albert graph is generated with 250 nodes, which are then classified into three types:
+  - **Suppliers**: Generate energy from different sources (Solar, Wind, Geothermal, etc.).
+  - **Distributors**: Mediate the flow of energy between suppliers and stations.
+  - **Stations**: Consume or store energy, simulating charging stations.
 
-- **Flujo de energía**: A lo largo del tiempo, los suministradores generan energía que es distribuida por los distribuidores a las estaciones. La cantidad de energía generada y distribuida cambia dinámicamente según el tipo de energía y las características de cada nodo.
+- **Energy flow**: Over time, suppliers generate energy, which is distributed by distributors to the stations. The amount of energy generated and distributed changes dynamically depending on the type of energy and the characteristics of each node.
 
-- **Actualización visual**: La red se actualiza visualmente en tiempo real, mostrando:
-  - **Tamaños de nodo**: Basados en la cantidad de energía que contienen.
-  - **Colores**: Representan el nivel de carga (amarillo para suministradores, azul para estaciones, naranja para distribuidores).
-  - **Gráficos adicionales**:
-    - **Gráfico de barras**: Carga total en distribuidores y estaciones, además de la capacidad libre.
-    - **Mix energético**: Producción total por cada tipo de energía.
+- **Visual update**: The network is visually updated in real-time, showing:
+  - **Node sizes**: Based on the amount of energy they contain.
+  - **Colors**: Represent the charge level (yellow for suppliers, blue for stations, orange for distributors).
+  - **Additional graphs**:
+    - **Bar graph**: Total load in distributors and stations, in addition to free capacity.
+    - **Energy mix**: Total production for each type of energy.
 
-## Reglas y comportamiento de los nodos
+## Node rules and behavior
 
-1. **Suministradores**:
-   - Generan energía según su tipo (Solar, Eólica, Nuclear, etc.).
-   - La energía se produce siguiendo una serie de funciones temporales que varían según el tipo de energía. Por ejemplo, la energía solar depende de la hora del día, mientras que la eólica varía rápidamente.
+1. **Suppliers**:
+   - Generate energy according to their type (Solar, Wind, Nuclear, etc.).
+   - Energy is produced following a series of time functions that vary according to the type of energy. For example, solar energy depends on the time of day, while wind energy fluctuates quickly.
 
-2. **Distribuidores**:
-   - Reciben energía de los suministradores y la envían a las estaciones. Si reciben demasiada energía, pueden sobrecargarse y detener el envío de energía.
+2. **Distributors**:
+   - Receive energy from suppliers and send it to stations. If they receive too much energy, they can overload and stop sending energy.
 
-3. **Estaciones**:
-   - Pueden almacenar energía hasta una capacidad máxima. La energía almacenada fluctúa según un patrón sinusoidal que simula el consumo y la carga de energía.
+3. **Stations**:
+   - They can store energy up to a maximum capacity. The stored energy fluctuates according to a sinusoidal pattern that simulates energy consumption and charging.
 
-## Información en las gráficas
+## Information in the graphs
 
-El script presenta varias gráficas para visualizar el estado de la red:
+The script presents several graphs to visualize the state of the network:
 
-- **Red de Nodos**: Muestra los suministradores, distribuidores y estaciones. Los colores y tamaños de los nodos cambian según el nivel de energía.
-- **Gráfico de evolución temporal**: Visualiza estadísticas clave, como:
-  - Estaciones al 0% o 100% de carga.
-  - Carga media de estaciones.
-  - Producción media de suministradores.
-  - Porcentaje de carga total en la red.
-- **Gráfico de barras (derecha)**: Muestra la carga total de distribuidores, estaciones, y la capacidad libre de las estaciones.
-- **Mix energético (izquierda)**: Desglosa la producción total de energía por tipo (Solar, Eólica, etc.).
+- **Node Network**: Displays suppliers, distributors, and stations. The colors and sizes of the nodes change according to the energy level.
+- **Temporal evolution graph**: Visualizes key statistics, such as:
+  - Stations at 0% or 100% charge.
+  - Average station charge.
+  - Average supplier production.
+  - Percentage of total network charge.
+- **Bar graph (right)**: Shows the total load of distributors, stations, and the free capacity of the stations.
+- **Energy mix (left)**: Breaks down the total energy production by type (Solar, Wind, etc.).
 
-## Dependencias
+## Dependencies
 
-Para ejecutar este proyecto, asegúrate de tener instaladas las siguientes dependencias:
+To run this project, make sure you have the following dependencies installed:
 
-- `networkx`: Para la creación y manipulación de grafos.
-- `matplotlib`: Para la visualización de gráficos.
-- `numpy`: Para el manejo de funciones matemáticas avanzadas.
-- `tkinter`: Para la interfaz gráfica.
+- `networkx`: For graph creation and manipulation.
+- `matplotlib`: For graph visualization.
+- `numpy`: For advanced mathematical functions.
+- `tkinter`: For the graphical interface.
 
-Puedes instalarlas ejecutando:
+You can install them by running:
 
 ```bash
 pip install networkx matplotlib numpy
